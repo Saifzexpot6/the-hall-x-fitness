@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE HALE X FITNESS | Health and Fitness Gym</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+        .dark-mode {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .dark-mode .card {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+        .dark-mode .text-gray-700 {
+            color: #e2e8f0;
+        }
+        .dark-mode .bg-gray-100 {
+            background-color: #2d3748;
+        }
+        .dark-mode .bg-white {
+            background-color: #2d3748;
+        }
+        .dark-mode .border {
+            border-color: #4a5568;
+        }
+        .typing-container {
+            display: inline-block;
+        }
+        .typed-cursor {
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .theme-toggle {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                    <span class="font-bold text-white">HXF</span>
+                </div>
+                <h1 class="text-xl font-bold">THE HALE X FITNESS</h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="hover:text-red-500 font-semibold">Home</a>
+                <a href="#services" class="hover:text-red-500 font-semibold">Services</a>
+                <a href="#gallery" class="hover:text-red-500 font-semibold">Gallery</a>
+                <a href="#about" class="hover:text-red-500 font-semibold">About</a>
+                <a href="#contact" class="hover:text-red-500 font-semibold">Contact</a>
+                
+                <!-- Dark/Light Mode Toggle -->
+                <button id="theme-toggle" class="theme-toggle bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2 ml-4">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center">
+                <!-- Dark/Light Mode Toggle (Mobile) -->
+                <button id="theme-toggle-mobile" class="theme-toggle bg-gray-700 hover:bg-gray-600 text-white rounded-full p-2 mr-4 md:hidden">
+                    <i class="fas fa-moon" id="theme-icon-mobile"></i>
+                </button>
+                
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-gray-800 py-4">
+            <div class="container mx-auto px-4 flex flex-col space-y-4">
+                <a href="#home" class="hover:text-red-500 font-semibold">Home</a>
+                <a href="#services" class="hover:text-red-500 font-semibold">Services</a>
+                <a href="#gallery" class="hover:text-red-500 font-semibold">Gallery</a>
+                <a href="#about" class="hover:text-red-500 font-semibold">About</a>
+                <a href="#contact" class="hover:text-red-500 font-semibold">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">TRANSFORM YOUR BODY, TRANSFORM YOUR LIFE</h1>
+            <div class="text-xl md:text-2xl mb-8 h-12">
+                <div class="typing-container">
+                    <span id="typed-text"></span>
+                    <span class="typed-cursor">|</span>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Join Now</a>
+                <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">OUR SERVICES</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card card bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-dumbbell text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-white">Strength Training</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Build muscle, increase strength and improve endurance with our personalized strength training programs.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card card bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-fist-raised text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-white">Boxing & Kickboxing</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Learn self-defense while getting an intense full-body workout with our professional boxing and kickboxing classes.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card card bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-running text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-white">CrossFit</h3>
+                        <p class="text-gray-700 dark:text-gray-300">High-intensity functional training that combines elements of cardio, weightlifting and gymnastics.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card card bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-spa text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-white">Yoga & Zumba</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Find balance with our yoga classes or dance your way to fitness with energetic Zumba sessions.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card card bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-apple-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-white">Nutrition Coaching</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Personalized nutrition plans to complement your fitness journey and help you achieve your goals faster.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card card bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-laptop text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-white">Online Classes</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Can't make it to the gym? Join our live online classes from the comfort of your home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">GALLERY</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gym Equipment" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2120&q=80" alt="Yoga Class" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Boxing Training" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="CrossFit" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Zumba Class" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80" alt="Weightlifting" class="w-full h-64 object-cover hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">ABOUT US</h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gym Interior" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Welcome to THE HALE X FITNESS</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Located in the heart of Vaishali, Ghaziabad, THE HALE X FITNESS is a premier health and fitness destination offering a comprehensive range of services to help you achieve your fitness goals.</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Our state-of-the-art facility is open 24 hours, providing flexibility for all schedules. We offer professional sports training including Boxing, Kickboxing, Taekwondo, Weightlifting, along with Yoga, Zumba, Aerobics, CrossFit, and Strength & Conditioning programs.</p>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Our certified trainers and nutrition coaches are dedicated to providing personalized guidance to help you transform your body and improve your overall health.</p>
+                    <p class="text-gray-700 dark:text-gray-300">Visit us today and take the first step towards a healthier, stronger you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">CONTACT US</h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 dark:text-white">Get In Touch</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="name">Name</label>
+                                <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white dark:border-gray-600" type="text" id="name" placeholder="Your Name">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="email">Email</label>
+                                <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white dark:border-gray-600" type="email" id="email" placeholder="Your Email">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 mb-2" for="message">Message</label>
+                                <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:text-white dark:border-gray-600" id="message" rows="4" placeholder="Your Message"></textarea>
+                            </div>
+                            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg h-full">
+                        <h3 class="text-xl font-bold mb-4 dark:text-white">Contact Information</h3>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg mb-2 dark:text-white">Address</h4>
+                            <p class="text-gray-700 dark:text-gray-300">Lower ground floor, Building no.300, Rd-4, below Max lab, Sector 4, Vaishali, Ghaziabad, Uttar Pradesh 201019</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg mb-2 dark:text-white">Phone</h4>
+                            <p class="text-gray-700 dark:text-gray-300">088260 04013</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg mb-2 dark:text-white">Email</h4>
+                            <p class="text-gray-700 dark:text-gray-300">thehalexfitness@gmail.com</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-lg mb-2 dark:text-white">Hours</h4>
+                            <p class="text-gray-700 dark:text-gray-300">Open 24 hours</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 dark:text-white">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-red-600"><i class="fab fa-facebook fa-2x"></i></a>
+                                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-red-600"><i class="fab fa-instagram fa-2x"></i></a>
+                                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-red-600"><i class="fab fa-twitter fa-2x"></i></a>
+                                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-red-600"><i class="fab fa-youtube fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-white">HXF</span>
+                        </div>
+                        <h2 class="text-xl font-bold">THE HALE X FITNESS</h2>
+                    </div>
+                    <p class="mt-2 text-gray-400">Health and Fitness Gym</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">&copy; 2023 THE HALE X FITNESS. All rights reserved.</p>
+                    <p class="text-gray-400">Designed with <i class="fas fa-heart text-red-500"></i> for fitness enthusiasts</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after clicking a link
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeIconMobile = document.getElementById('theme-icon-mobile');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+            themeIconMobile.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        function toggleTheme() {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                themeIconMobile.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark-mode');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                themeIconMobile.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // Auto-typing effect
+        const typedTextSpan = document.getElementById('typed-text');
+        const textArray = [
+            "Professional Sports Training, Yoga, Zumba, CrossFit & Nutrition Coaching",
+            "Open 24 Hours for Your Convenience",
+            "Certified Trainers & Nutrition Coaches",
+            "Online Classes Available"
+        ];
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 2000; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        // Start the typing effect on load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+    </script>
+</body>
+</html>
